@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+  
+<mapper namespace="request"> 
+ 
+    <resultMap id = "result" type = "fitnes.model.Request"> 
+       <result property = "id" column = "id"/> 
+       <result property = "datestart" column = "datestart"/> 
+       <result property = "statuspay" column = "statuspay"/> 
+       <result property = "id_price" column = "id_price"/> 
+       <result property = "id_client" column = "id_client"/>
+    </resultMap> 
+ 
+    <select id = "selectAll" resultMap = "result"> 
+       SELECT * FROM request;  
+    </select> 
+
+    <select id = "selectById" parameterType = "int" resultMap = "result"> 
+       SELECT * FROM request WHERE id = #{id}; 
+    </select> 
+
+    <update id = "update" parameterType = "fitnes.model.Request"> 
+       UPDATE request SET 
+        datestart = #{datestart},
+        statuspay = #{statuspay},
+        id_price = #{id_price},
+        id_client = #{id_client}      
+        WHERE id = #{id}; 
+    </update> 
+  
+    <delete id = "deleteById" parameterType = "int"> 
+       DELETE from request WHERE id = #{id}; 
+    </delete> 
+
+    <insert id = "insert" parameterType = "fitnes.model.Request"> 
+       INSERT INTO request (datestart, statuspay, id_price, id_client)  
+       VALUES (#{datestart}, #{statuspay}, #{id_price}, #{id_client});     
+    </insert>
+</mapper> 

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+  
+<mapper namespace="price"> 
+ 
+    <resultMap id = "result" type = "fitnes.model.Price"> 
+       <result property = "id" column = "id"/> 
+       <result property = "name" column = "name"/> 
+       <result property = "description" column = "description"/> 
+       <result property = "price" column = "price"/> 
+       <result property = "timestart" column = "timestart"/> 
+       <result property = "timeend" column = "timeend"/> 
+       <result property = "countday" column = "countday"/> 
+    </resultMap> 
+ 
+    <select id = "selectAll" resultMap = "result"> 
+       SELECT * FROM price;  
+    </select> 
+
+    <select id = "selectById" parameterType = "int" resultMap = "result"> 
+       SELECT * FROM price WHERE id = #{id}; 
+    </select> 
+
+    <update id = "update" parameterType = "fitnes.model.Price"> 
+       UPDATE price SET 
+        name = #{name}, 
+        description = #{description} ,
+        price = #{price} ,
+        timestart = #{timestart},
+        timeend = #{timeend},
+        countday = #{countday}      
+        WHERE id = #{id}; 
+    </update> 
+  
+    <delete id = "deleteById" parameterType = "int"> 
+       DELETE from price WHERE id = #{id}; 
+    </delete> 
+
+    <insert id = "insert" parameterType = "fitnes.model.Price"> 
+       INSERT INTO price (name, description, price, timestart, timeend, countday)  
+       VALUES (#{name}, #{description}, #{price}, #{timestart}, #{timeend}, #{countday});     
+    </insert>
+</mapper> 
