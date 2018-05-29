@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Регистрация</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="../lib/css/bootstrap.min.css" rel="stylesheet">
+        <link href="../lib/css/style.css" rel="stylesheet">
+        <link href="../lib/css/styles.css" rel="stylesheet">
+        <link href="../lib/css/stylereg.css" rel="stylesheet">
+        <script src="../service/ClientService.js"></script>
+        <script src="../controllers/ClientController.js"></script>
+        
+        <script>
+         function insertClient(){
+                var controller = new ClientController();
+                var сlientService = new ClientService();                
+                var сlient={};
+                var log = document.form2.login.value;
+                var nam = document.form2.name.value;
+                var sur = document.form2.surname.value;
+                var ph = document.form2.phone.value;
+                var pass = document.form2.password.value;
+                        if ((log == "") || (nam == "") || (sur == "") || (ph == "") || (pass == ""))
+                        {
+                            alert("Введите все данные");
+                        } else {
+                            сlient.login = log;
+                            сlient.name = nam;
+                            сlient.surname = sur;
+                            сlient.phone = ph;
+                            сlient.password = pass;
+                            var json = JSON.stringify(сlient);
+                            controller.insertClient(json);
+                            var array = сlientService.getAllClient();
+                            for (var i = 0; i < array.length; i++) {
+                                if ((array[i].login == log) && (array[i].name == nam) && (array[i].surname == sur) && (array[i].phone == ph) && (array[i].password == pass)) {
+                                    var check=1;
+                                }
+                              }
+                              if(check==1){
+                            alert("Регистрация прошла успешна");
+                            document.form2.login.value="";
+                            document.form2.name.value="";
+                            document.form2.surname.value="";
+                            document.form2.phone.value="";
+                            document.form2.password.value="";
+                            }
+                            else alert("Что-то не так");                        
+            }
+        }
+        </script>
+        
+    </head>
+    <body>
+        <div class="Top">
+                <a href="/Diplom/index.html"><div class="Menu">
+                <img src="https://psv4.userapi.com/c834703/u112637286/docs/d18/50a45acd6c6b/logo.png?extra=6uNaOBqhtEPx5vdf61r4FNqvUoukeEvooZeS9leNtOeN4cDvCdE2qNwLgwzgaiAXWJnvfEmZx42j-Ze5hc9Tu8LrsQnh2M2v4PevvxC4A9TSH1UDVRvNvmEP52VwJKaFdoeUDtEA6sSe-A"
+                    alt="Главная"/>
+                </div></a>
+            <a href="/Diplom/view/table.html"><div class="Table">Расписание</div></a>
+            <a href="/Diplom/view/price.html"><div class="Price">Прайс-лист</div></a>
+            <a href="/Diplom/view/trainer.html"><div class="Team">Команда</div></a>
+            <a href="/Diplom/view/contact.html"><div class="Contact">Контакты</div></a>
+            <a href="/Diplom/view/about.html"><div class="About">О нас</div></a>
+            <a href="/Diplom/view/signin.html"><div class="Menu_comein">Войти</div></a>
+            <a href="/Diplom/view/signup.html"><div class="Menu_regist">Регистрация</div></a>
+        </div>
+        
+        
+        <div class="signup">
+        <form class="form-horizontal" name="form2" role="form">
+            <div class="form-group">
+                <label for="inputLogin3" class="col-sm-2 control-label">Логин</label>
+                <div class="col-sm-10">
+                    <input type="text" name="login" class="form-control" id = "login" placeholder="Введите логин">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputPassword3" class="col-sm-2 control-label">Имя</label>
+                <div class="col-sm-10">
+                    <input type="text" name ="name" class="form-control" id="name" placeholder="Введите имя">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputPassword3" class="col-sm-2 control-label">Фамилия</label>
+                <div class="col-sm-10">
+                    <input type="text" name ="surname" class="form-control" id="surname" placeholder="Введите фамилию">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputPassword3" class="col-sm-2 control-label">Номер телефона</label>
+                <div class="col-sm-10">
+                    <input type="text" name ="phone" class="form-control" id="phone" placeholder="Введите номер телефона">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputPassword3" class="col-sm-2 control-label">Пароль</label>
+                <div class="col-sm-10">
+                    <input type="password" name ="password" class="form-control" id="password" placeholder="Введите пароль">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button class="btn btn-default" type="button" onclick="insertClient()">Зарегистрироваться</button>
+                </div>
+            </div>
+
+        </form>
+        </div>
+
+        <!--  ================================================== -->
+        <script src="../lib/js/jquery.min.js"></script>
+        <script src="../lib/js/bootstrap.min.js"></script>
+        <script>
+            window.onload = function ()
+                {
+                var log = getCookie("login");
+                var pass = getCookie("password");
+                var button = "<button class='btn btn-default' id='logoutBut' type='submit' onclick='loginClick()'>Выйти</button>";
+                var check=0;
+                var сlientService = new ClientService(); 
+                var array = сlientService.getAllClient();
+                for (var i = 0; i < array.length; i++) {
+                    if ((array[i].login == log) && (array[i].password == pass)) {
+                       check = 1;
+                    }
+                }
+                if(check==1){
+                    document.getElementById('inputlog').style.display = 'none';
+                    document.getElementById('inputpass').style.display = 'none';
+                    var element = document.getElementById("logBut");
+                    element.innerHTML = button;
+                    var n = document.getElementsByClassName('mur');
+                    for(var i=0;i<n.length;i++){
+                       n[i].disabled = false;
+                    }
+                }
+                }
+                function getCookie(name) {
+                var matches = document.cookie.match(new RegExp(
+                  "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+                ));
+                return matches ? decodeURIComponent(matches[1]) : undefined;
+                 }
+        </script>        
+        
+    </body>
+</html>

@@ -1,0 +1,239 @@
+.Top{
+    position: absolute;
+    height: 70px;
+    padding-left: 100px;
+    padding-right: 48px;
+    right: 0;
+    left: 0;
+    top: 0;
+    background: #000000;
+}
+
+
+.Menu{
+    float: left;
+    display: block;
+    width: 170px;
+    height: 70px; 
+    background: #000000;
+    color: #fff;
+}
+.Menu:hover{
+    opacity: 1;
+    cursor: pointer;
+    background: #2f3336;
+}
+
+
+.Table{
+    float: left;
+    display: block;
+    height: 70px; 
+    background: #000000;
+    padding: 30px;
+    padding-top: 25px;
+    font-family: Arial;
+    font-weight: normal;
+    font-size: 16px;
+    color: #fff;
+}
+.Table:hover{
+    opacity: 1;
+    cursor: pointer;
+    background: #2f3336;
+}
+
+.Price{ 
+    float: left;
+    display: block;
+    height: 70px; 
+    background: #000000;
+    padding: 30px;
+    padding-top: 25px;
+    font-family: Arial;
+    font-weight: normal;
+    font-size: 16px;
+    color: #fff;
+}
+.Price:hover{
+    opacity: 1;
+    cursor: pointer;
+    background: #2f3336;
+}
+
+.Team{ 
+    float: left;
+    display: block;
+    height: 70px; 
+    background: #000000;
+    padding: 30px;
+    padding-top: 25px;
+    font-family: Arial;
+    font-weight: normal;
+    font-size: 16px;
+    color: #fff;
+}
+.Team:hover{
+    opacity: 1;
+    cursor: pointer;
+    background: #2f3336;
+}
+
+
+
+.Contact{ 
+    float: left;
+    display: block;
+    height: 70px; 
+    background: #000000;
+    padding: 30px;
+    padding-top: 25px;
+    font-family: Arial;
+    font-weight: normal;
+    font-size: 16px;
+    color: #fff;
+}
+.Contact:hover{
+    opacity: 1;
+    cursor: pointer;
+    background: #2f3336;
+}
+
+.About{ 
+    float: left;
+    display: block;
+    height: 70px; 
+    background: #000000;
+    padding: 30px;
+    padding-top: 25px;
+    font-family: Arial;
+    font-weight: normal;
+    font-size: 16px;
+    color: #fff;
+}
+.About:hover{
+    opacity: 1;
+    cursor: pointer;
+    background: #2f3336;
+}
+
+.Menu_comein{ 
+    float: left;
+    display: block;
+    height: 70px; 
+    background: #000000;
+    padding: 30px;
+    padding-top: 25px;
+    font-family: Arial;
+    font-weight: normal;
+    font-size: 16px;
+    color: #fff;
+}
+.Menu_comein:hover{
+    opacity: 1;
+    cursor: pointer;
+    background: #2f3336;
+}
+.Menu_regist{
+    float: left;
+    display: block;
+    height: 70px; 
+    background: #000000;
+    padding: 30px;
+    padding-top: 25px;
+    font-family: Arial;
+    font-weight: normal;
+    font-size: 16px;
+    color: #fff;
+}
+.Menu_regist:hover{
+    opacity: 1;
+    cursor: pointer;
+    background: #2f3336;
+}    
+
+.logout{
+    float: left;
+    display: block;
+    height: 70px; 
+    background: #000000;
+    padding: 30px;
+    padding-top: 25px;
+    font-family: Arial;
+    font-weight: normal;
+    font-size: 16px;
+    color: #fff;
+}
+.logout:hover{
+    opacity: 1;
+    cursor: pointer;
+    background: #2f3336;
+}    
+
+
+.Contact{
+    float: left;
+    display: block;
+    height: 70px; 
+    background: #000000;
+    padding: 30px;
+    padding-top: 25px;
+    font-family: Arial;
+    font-weight: normal;
+    font-size: 16px;
+    color: #fff;
+}
+.Contact:hover{
+    opacity: 1;
+    cursor: pointer;
+    background: #2f3336;
+}    
+
+
+.menu_strip{
+    position: absolute;
+    top: 70px;
+    left: 0px;    
+}
+.hotel_discript{
+    position: absolute;
+    top: 70px;
+    
+}
+
+
+.signin{
+    position: absolute;
+    top: 150px;
+    left: 40%;  
+}
+
+
+.booking{
+    position: relative;
+    top: 0px;
+    left: 820px;
+    width: 200px;
+}
+
+.tabel{
+    position: absolute;
+    top: 70px;
+    left: 30px;
+    right: 30px;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    height: 80px;
+    background: #000000;
+    padding: 20px;
+    font-family: Arial;
+    font-weight: normal;
+    font-size: 16px;
+    color: #fff;
+	
+}

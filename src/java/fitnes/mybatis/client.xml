@@ -3,7 +3,7 @@
   
 <mapper namespace="client"> 
  
-    <resultMap id = "result" type = "fintes.model.Client"> 
+    <resultMap id = "result" type = "fitnes.model.Client"> 
        <result property = "id" column = "id"/> 
        <result property = "login" column = "login"/> 
        <result property = "name" column = "name"/>
